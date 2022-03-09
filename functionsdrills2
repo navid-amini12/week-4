@@ -77,18 +77,6 @@ const totalPopulation  =  populations.reduce(function(initialValue,myArray){
  console.log(totalPopulation)
 
 
- //Using the arrow function method  ------------
-
- const mySumResult =  populations.reduce((initialValue, myArray) => {
-
-    return initialValue +=  myArray
- })
- console.log(mySumResult)
-
-
-
-
-
 
 // ////////// PROBLEM 4 //////////
 
@@ -115,13 +103,6 @@ const myStrongest = monstersInYourPocket.filter(function(myArray) {
     if ( myArray.CP > 200)
     return myArray
 })
-console.log(myStrongest)
-
-
-// // To do it with the arrow function ------
-
-const myStrongest = monstersInYourPocket.filter(pocketMonster => pocketMonster.CP > 200)
-
 console.log(myStrongest)
 
 
@@ -154,12 +135,6 @@ const total = orders.map(function(myArray) {
    
   })
 console.log(total)
-// with an arrow function
-const total = orders.map(myorders => order.price + (order.price * order.tax))
-
-
-
-
 
 ////////// PROBLEM 6 //////////
 
@@ -185,6 +160,4 @@ const bobsTotal = purchases.filter(function(myArray) {
     return initialValue + myArray.price
 }, 0)
 console.log(bobsTotal)
-// with an arrow function 
- const bobsTotal = purchases.filter(myPurchase => myPurchase.owner == "Bob").reduce((i, m) => i + m.price, 0)
 
