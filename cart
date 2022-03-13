@@ -1,0 +1,107 @@
+///////////////////////////////////////////////
+///////////////////CART.JS/////////////////////
+///////////////////////////////////////////////
+/*
+    In this file, you'll be writing code to
+    calculate order totals. You'll also be 
+    creating customer objects.  
+*/
+
+
+//////////////////PROBLEM 1////////////////////
+/*  
+    Below is a cart array that has food objects
+    inside. 
+
+    Write a callback below that uses the reduce
+    array method to calculate the sum of all
+    the food. 
+*/
+
+const cart = [
+    {
+        name: 'pizza', 
+        price: 9.99
+    }, 
+    {
+        name: 'pasta', 
+        price: 8.99
+    }, 
+    {
+        name: 'salad', 
+        price: 7.99
+    }
+]
+
+
+
+ const summedPrice = cart.reduce(function(previousValue, currentValue, currentIndex, array){
+
+ return array[0].price+array[1].price+array[2].price
+});
+console.log(summedPrice)
+//////////////////PROBLEM 2////////////////////
+/*  
+    Write a function called `calcFinalPrice` that
+    can take in `cartTotal`,`couponValue`,
+    and `tax` arguments. 
+
+    Inside the function, calculate the tax 
+    on the cartTotal and add it in. Subtract
+    the value of the coupon. Return the final
+    number. 
+
+    Note: the numbers passed in for `tax` will be
+    decimals, for example: .06 for a 6% tax.
+*/
+function calcFinalPrice(cartTotal,couponValue,tax){
+const final = ((cartTotal*tax)-couponValue)+cartTotal
+return final 
+
+}
+console.log(calcFinalPrice(1000,500,0.10))
+
+
+
+
+//////////////////PROBLEM 3////////////////////
+/*  
+    In this problem, you'll create a model for 
+    a customer object as well as an example
+    object. 
+
+    Plan out a customer object for the cart page.
+    Think about the information that a 
+    restaurant would need about its customers.
+
+    In the TEXT ANSWER area below, describe the
+    properties that your customer object will have
+    and why you chose those properties.
+
+    Explain what data types each property should be
+    and why you chose those data types. 
+
+    Your object should have at least 4 properties. 
+*/
+
+/*
+  our customer is going to have a name which will be a string. If a name is a serious of characters then it will most likely be a strong. Same applies for a surname. Since a phone number consists of actual numbers,
+  then we can use Integer for those. Although we could have a phone number that is a string like "111111" but then that would in reality be a string and it could work for phone numbers but performing math operatins would not be possible unless converted to an Integer again.
+  If we want to check a certain phone number, area code, number of digits, etc then using Integers would make our lives easier. Home Address and email address are both of string data type. Although an address could be a programmer defined datatype consiting of a zip code, flat number but here we are simply defining it as a string.
+  
+
+*/
+
+/*
+    Now, create a customer object following your own
+    guidelines.
+*/
+
+const customer = {
+    firstName: "Navid",
+    lastName: "Amini",
+    phoneNumber: 111111,
+    emailAddress: "nav@random.com",
+    homeAddress: "Antioch,CA",
+  };
+  console.log(person.emailAddress)
